@@ -13120,6 +13120,13 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Read-data">Read data<a class="anchor-link" href="#Read-data">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13463,6 +13470,15 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Metadata">Metadata<a class="anchor-link" href="#Metadata">&#182;</a></h3><p>View description of each feature, alone with their assigned data type, 1st and 2nd
+values and the number of unique entires.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15150,6 +15166,14 @@ new products not publicly available policy_code=2</td>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>This feature has no description and hence is dropped</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Problematic-features">Problematic features<a class="anchor-link" href="#Problematic-features">&#182;</a></h2>
 </div>
 </div>
@@ -15304,11 +15328,13 @@ Name: loan_status, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;emp_title&quot;</span><span class="p">,</span> <span class="s2">&quot;emp_length&quot;</span><span class="p">]:</span>
     <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Unknown&quot;</span>
 
+    
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span>
     <span class="s2">&quot;mths_since_last_delinq&quot;</span><span class="p">,</span> <span class="s2">&quot;mths_since_last_record&quot;</span><span class="p">,</span>
     <span class="s2">&quot;mths_since_last_major_derog&quot;</span><span class="p">,</span>
 <span class="p">]:</span>
     <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10000</span>
+    
     
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;tot_coll_amt&quot;</span><span class="p">,</span> <span class="s2">&quot;tot_cur_bal&quot;</span><span class="p">]:</span>
     <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
@@ -22929,7 +22955,7 @@ Name: loan_status, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-types">Data types<a class="anchor-link" href="#Data-types">&#182;</a></h2>
+<h2 id="Data-types">Data types<a class="anchor-link" href="#Data-types">&#182;</a></h2><h3 id="Numeric">Numeric<a class="anchor-link" href="#Numeric">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -22950,7 +22976,7 @@ Name: loan_status, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All dates are labelled with a month and year. This can be converted into a number of months since 1970 (unix time) to be used as an integer: (year - 1970)*12 + (month - 1)</p>
+<h3 id="Date/time">Date/time<a class="anchor-link" href="#Date/time">&#182;</a></h3><p>All dates are labelled with a month and year. This can be converted into a number of months since 1970 (unix time) to be used as an integer: (year - 1970)*12 + (month - 1)</p>
 
 </div>
 </div>
@@ -23015,6 +23041,13 @@ Name: loan_status, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Target-feature">Target feature<a class="anchor-link" href="#Target-feature">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
@@ -23027,6 +23060,14 @@ Name: loan_status, dtype: int64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Find any duplicate columns to drop.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -23273,6 +23314,14 @@ Name: loan_status, dtype: int64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>View metadata information once again</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -24253,6 +24302,14 @@ Name: loan_status, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Find columns which do not have enough unique values.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
@@ -24287,6 +24344,13 @@ Name: loan_status, dtype: int64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Export-data">Export data<a class="anchor-link" href="#Export-data">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
